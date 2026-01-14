@@ -1,3 +1,5 @@
+/** @format */
+
 const connectBtn = document.getElementById("connectBtn");
 const statusEl = document.getElementById("status");
 const addressEl = document.getElementById("address");
@@ -67,4 +69,39 @@ async function connectWallet() {
   }
 }
 
-connectBtn.addEventListener("click", connectWallet);
+let isConnected = false;
+
+function setDisconnectMode() {
+  connectBtn.textContent = "Disconnect Wallet";
+  connectBtn.classList.add("disconnect-mode");
+  isConnected = true;
+}
+
+function setConnectMode() {
+  connectBtn.textContent = "Connect Wallet";
+  connectBtn.classList.remove("disconnect-mode");
+
+  statusEl.textContent = "Not Connected";
+  statusEl.style.color = "";
+  addressEl.textContent = "-";
+  networkEl.textContent = "-";
+  balanceEl.textContent = "-";
+
+  isConnected = false;
+}
+
+async function handleWalletButton() {
+  if (!isConnected) {
+    await connectWallet();
+
+    // Jika berhasil connect
+    if (statusEl.textContent.includes("Connected")) {
+      setDisconnectMode();
+    }
+  } else {
+    setConnectMode();
+  }
+}
+
+connectBtn.removeEventListener("click", connectWallet);
+connectBtn.addEventListener("click", handleWalletButton);
