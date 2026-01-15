@@ -1,3 +1,5 @@
+/** @format */
+
 import { viem } from "hardhat";
 
 import Artifact from "../artifacts/contracts/simple-storage.sol/SimpleStorage.json";
