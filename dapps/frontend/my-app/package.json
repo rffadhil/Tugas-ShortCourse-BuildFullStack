@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.17",
-    "@walletconnect/ethereum-provider": "^2.23.2",
+    "@walletconnect/ethereum-provider": "^2.23.3",
     "next": "16.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",

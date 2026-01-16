@@ -1,0 +1,4 @@
+/** @format */
+
+export const SIMPLE_STORAGE_ADRESS =
+  "0x958578A3C41f2d05E9287f0F59F94C019fBa0aeB";
