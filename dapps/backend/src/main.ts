@@ -7,7 +7,14 @@ async function bootstrap() {
 
   const config = new DocumentBuilder()
     .setTitle('Simple Storage dApp API')
-    .setDescription('The Simple Storage dApp API description')
+    .setDescription(
+      `
+      Nama: Rafi Fadhil Amanullah
+      NIM: 241011400893
+
+      The Simple Storage dApp API description
+      `,
+    )
     .setVersion('1.0')
     .addTag('simple-storage')
     .build();
